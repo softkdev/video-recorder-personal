@@ -1,74 +1,69 @@
 import React, { useEffect, useState } from "react";
-// import Webcam from "react-webcam";
-// import CountdownTimer from "react-component-countdown-timer";
+import Webcam from "react-webcam";
+import CountdownTimer from "react-component-countdown-timer";
 
 export const RecordView = ({ setVideo, time }) => {
   let recordingTimeMS = time || 5000;
 
-  setVideo("name");
+  const [preview, setPreview] = useState("");
+  const [videoWebCam, setVideoWebCam] = useState("");
+  const [state, setState] = useState(1);
+  const [showButton, setShowButton] = useState(true);
+  const [showButtonReset, setShowButtonReset] = useState(false);
+
   useEffect(() => {
-    console.log(time);
-  }, []);
-  // const [preview, setPreview] = useState("");
-  // const [videoWebCam, setVideoWebCam] = useState("");
-  // const [state, setState] = useState(1);
-  // const [showButton, setShowButton] = useState(true);
-  // const [showButtonReset, setShowButtonReset] = useState(false);
+    console.log("heare");
+    setPreview(document.getElementById("preview"));
+    setVideoWebCam(document.getElementById("videoWebCam"));
+  });
 
-  // useEffect(() => {
-  // console.log("heare");
-  // setPreview(document.getElementById("preview"));
-  // setVideoWebCam(document.getElementById("videoWebCam"));
-  // });
+  const handleStopVideo = () => {
+    setState(2);
+    setShowButtonReset(true);
+  };
 
-  // const handleStopVideo = () => {
-  //   setState(2);
-  //   setShowButtonReset(true);
-  // };
+  const handleResetVideo = () => {
+    setVideo("");
+    setShowButton(true);
+    setShowButtonReset(false);
+    setState(1);
+  };
 
-  // const handleResetVideo = () => {
-  //   setVideo("");
-  //   setShowButton(true);
-  //   setShowButtonReset(false);
-  //   setState(1);
-  // };
+  const handleStart = () => {
+    setShowButton(false);
+    const sUsrAg = navigator.userAgent;
+    let videoStream;
+    if (sUsrAg.indexOf("Firefox") > -1) {
+      videoStream = videoWebCam.mozCaptureStream();
+    } else {
+      videoStream = videoWebCam.captureStream();
+    }
+    let mediaRecorder = new MediaRecorder(videoStream);
+    let chunks = [];
+    mediaRecorder.ondataavailable = function (e) {
+      chunks.push(e.data);
+    };
+    mediaRecorder.onstop = function (e) {
+      var blob = new Blob(chunks, { type: "video/mp4" });
+      chunks = [];
+      var videoURL = URL.createObjectURL(blob);
+      preview.src = videoURL;
+      setVideo(blob);
+    };
+    mediaRecorder.start();
+    setTimeout(() => {
+      handleStopVideo();
+      mediaRecorder.stop();
+    }, [recordingTimeMS]);
+  };
 
-  // const handleStart = () => {
-  //   setShowButton(false);
-  //   const sUsrAg = navigator.userAgent;
-  //   let videoStream;
-  //   if (sUsrAg.indexOf("Firefox") > -1) {
-  //     videoStream = videoWebCam.mozCaptureStream();
-  //   } else {
-  //     videoStream = videoWebCam.captureStream();
-  //   }
-  //   let mediaRecorder = new MediaRecorder(videoStream);
-  //   let chunks = [];
-  //   mediaRecorder.ondataavailable = function (e) {
-  //     chunks.push(e.data);
-  //   };
-  //   mediaRecorder.onstop = function (e) {
-  //     var blob = new Blob(chunks, { type: "video/mp4" });
-  //     chunks = [];
-  //     var videoURL = URL.createObjectURL(blob);
-  //     preview.src = videoURL;
-  //     setVideo(blob);
-  //   };
-  //   mediaRecorder.start();
-  //   setTimeout(() => {
-  //     handleStopVideo();
-  //     mediaRecorder.stop();
-  //   }, [recordingTimeMS]);
-  // };
-
-  // const handleClass = (num) => {
-  //   return `videoFilm ${state === num ? "" : "hidden"}`;
-  // };
+  const handleClass = (num) => {
+    return `videoFilm ${state === num ? "" : "hidden"}`;
+  };
 
   return (
     <div>
-      Name
-      {/* <div className="left">
+      <div className="left">
         <Webcam
           id="videoWebCam"
           mirrored={true}
@@ -110,7 +105,7 @@ export const RecordView = ({ setVideo, time }) => {
             </button>
           )}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

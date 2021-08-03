@@ -109,10 +109,10 @@ export const RecordVideo = ({ setVideo, videoHelp, reload }) => {
       </div>
     );
   };
-  return osName !== "iOS" ? (
-    <RecordView setVideo={setVideo} time={10000} />
-  ) : (
-    <FaceDetect video={setVideo} />
-  );
-  // return <RecordView setVideo={setVideo} time={10000} />;
+  // return osName !== "iOS" ? (
+  //   <RecordView setVideo={setVideo} time={10000} />
+  // ) : (
+  //   <FaceDetect video={setVideo} />
+  // );
+  return <FaceDetect video={setVideo} />;
 };

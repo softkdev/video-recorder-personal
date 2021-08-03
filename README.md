@@ -1,13 +1,13 @@
-# video-recorder-custom
+# video-recorder-itsaaz
 
 >
 
-[![NPM](https://img.shields.io/npm/v/video-recorder-custom.svg)](https://www.npmjs.com/package/video-recorder-custom) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/video-recorder-itsaaz.svg)](https://www.npmjs.com/package/video-recorder-itsaaz) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save video-recorder-custom
+npm install --save video-recorder-itsaaz
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save video-recorder-custom
 ```jsx
 import React, { Component } from "react";
 
-import { useMyHook } from "video-recorder-custom";
+import { useMyHook } from "video-recorder-itsaaz";
 
 const Example = () => {
   const example = useMyHook();

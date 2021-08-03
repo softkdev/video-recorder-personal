@@ -30,7 +30,8 @@
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "gitty": "node g.js"
   },
   "peerDependencies": {
     "react": "^16.9.0"
@@ -58,6 +59,7 @@
     "@babel/preset-react": "^7.0.0",
     "@testing-library/react-hooks": "^3.2.1",
     "babel-eslint": "^10.0.1",
+    "child_process": "^1.0.2",
     "cross-env": "^5.2.0",
     "eslint": "5.16.0",
     "eslint-config-standard": "^11.0.0",

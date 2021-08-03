@@ -1,8 +1,8 @@
 {
-  "name": "test-hook-custom",
-  "version": "1.0.0",
-  "description": "",
-  "author": "Kavand-1400",
+  "name": "video-recorder-custom",
+  "version": "1.2.760",
+  "description": "This is a package usefull for recording webcam in every devices",
+  "author": "Hossein Kavand",
   "license": "MIT",
   "repository": "Kavand-1400/test-hook-custom",
   "main": "dist/index.js",
@@ -12,6 +12,16 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "keywords": [
+    "persian",
+    "persian-video-recorder",
+    "persian-recorder",
+    "video-recorder-custom",
+    "video-recorderobject",
+    "video-recorder",
+    "persian-video-recorder",
+    "video-recorder-persian"
+  ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -66,5 +76,14 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-url": "^2.1.0"
+  },
+  "dependencies": {
+    "facefilter": "^2.1.8",
+    "react-component-countdown-timer": "^0.1.8",
+    "react-device-detect": "^1.17.0",
+    "react-st-modal": "^1.1.3",
+    "react-three-fiber": "^6.0.13",
+    "react-video-recorder-persion-customize": "^1.0.0",
+    "react-webcam": "^5.2.4"
   }
 }

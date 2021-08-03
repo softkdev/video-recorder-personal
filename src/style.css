@@ -1,0 +1,200 @@
+.body-modal{
+    padding: 15px;
+    text-align: center;
+    margin: 5px;
+}
+.modal-list{
+    margin: 25px;
+}
+#preview {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+.videoFilm.hidden {
+    display: none;
+}
+
+.videoFilm {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.left {
+    position: relative;
+}
+
+.button-recorde {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 4rem;
+}
+
+.btn-video-recorder {
+    outline: none;
+    border: none;
+    background-color: #f23300;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.timer {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 1.2rem;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: right;
+    padding-right: 20px;
+    color: white;
+    line-height: 1;
+}
+
+.timer * {
+    font-family: Menlo, monospace !important;
+    font-size: larger;
+}
+
+.timer .inline {
+    max-width: 24px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.timer .split {
+    letter-spacing: 7px;
+}
+
+.timer .d-inline-block {
+    font-size: 18px;
+    margin-left: 3px;
+    display: inline-block;
+}
+
+.timer .displayedTime::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: -2px;
+    background-color: #f23300;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: block;
+}
+
+.timer .displayedTime {
+    display: inline;
+    position: relative;
+}
+.mirrorX {
+    transform: rotateY(180deg);
+  }
+  
+  .mirrorX canvas {
+    width: 100% !important;
+    border-radius: 8px;
+  }
+  
+  .mirrorX+canvas {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+  }
+  
+  #myProgress {
+    direction: ltr;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 8px;
+    display: flex;
+  }
+  
+  .myin {
+    width: 5%;
+    height: 30px;
+    background-color: #0483aa;
+    text-align: center;
+    border-radius: 0 8px 8px 0;
+    line-height: 30px;
+    color: white;
+  }
+  
+  #myProgress .flex:first-child .myin {
+    border-radius: 8px 0 0 8px !important;
+  }
+  
+  .flex {
+    width: 50%;
+  }
+  
+  .backprogress {
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .width-progress {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 30px;
+    background-color: #04AA6D;
+    border-radius: 0 8px 8px 0;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  
+  #myProgress .flex:first-child .width-progress {
+    border-radius: 8px 0 0 8px !important;
+  }
+  
+  .img-cover {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    top: 10%;
+  }
+  
+  .video-face {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background-color: #eee;
+    border-radius: 8px;
+  }
+  
+  .videp-recorder {
+    position: absolute;
+    top: 0;
+  }
+  
+  .video-parent {
+    position: relative;
+  }
+  
+  video[class|=video-recorder__Video-sc] {
+    display: none;
+  }
+  
+  .videp-recorder div[class|=record-button__Instructions-sc] {
+    color: #000 !important;
+    font-family: Dana !important;
+    letter-spacing: normal !important;
+  }
+  
+  .videp-recorder>div {
+    background-color: transparent !important;
+  }
+  
+  span.SVGInline {
+    display: none;
+  }

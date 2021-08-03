@@ -1,28 +1,26 @@
-# test-hook-custom
+# video-recorder-custom
 
-> 
+>
 
-[![NPM](https://img.shields.io/npm/v/test-hook-custom.svg)](https://www.npmjs.com/package/test-hook-custom) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/video-recorder-custom.svg)](https://www.npmjs.com/package/video-recorder-custom) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save test-hook-custom
+npm install --save video-recorder-custom
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { useMyHook } from 'test-hook-custom'
+import { useMyHook } from "video-recorder-custom";
 
 const Example = () => {
-  const example = useMyHook()
-  return (
-    <div>{example}</div>
-  )
-}
+  const example = useMyHook();
+  return <div>{example}</div>;
+};
 ```
 
 ## License

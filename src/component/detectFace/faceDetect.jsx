@@ -5,14 +5,14 @@ const FaceDetect = ({ video }) => {
   // const [start, setStart] = useState(false);
 
   // video("");
-  useEffect(() => {
-    console.log(video);
-    //   if (start) {
-    //     document.getElementById(
-    //       "textInfo"
-    //     ).innerHTML = `<span className="text-danger">صورت شما شناسایی نشد!</span>`;
-    //   }
-  }, [start]);
+  // useEffect(() => {
+  // console.log(video);
+  //   if (start) {
+  //     document.getElementById(
+  //       "textInfo"
+  //     ).innerHTML = `<span className="text-danger">صورت شما شناسایی نشد!</span>`;
+  //   }
+  // }, [start]);
   return (
     <div className="facedetect">
       {/* {start && (

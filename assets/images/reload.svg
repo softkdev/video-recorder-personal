@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Backward_Rearward_Back.2" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#f96540;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <path id="Path_3892" fill="none" d="M0 0h24v24H0z"/>
+    <path id="Path_3893" d="M6 7.5l3-3" class="cls-2"/>
+    <path id="Path_3894" d="M6 7.5l3 3" class="cls-2"/>
+    <path id="Path_3895" d="M6 7.5h6a6 6 0 1 1-6 6" class="cls-2"/>
+</svg>

@@ -1,6 +1,6 @@
 {
-  "name": "video-recorder-custom",
-  "version": "1.2.763",
+  "name": "video-recorder-itsaaz",
+  "version": "1.0.1",
   "description": "This is a package usefull for recording webcam in every devices",
   "author": "Hossein Kavand",
   "license": "MIT",
@@ -16,9 +16,10 @@
     "persian",
     "persian-video-recorder",
     "persian-recorder",
-    "video-recorder-custom",
+    "video-recorder-itsaaz",
     "video-recorderobject",
     "video-recorder",
+    "itsaaz-video",
     "persian-video-recorder",
     "video-recorder-persian"
   ],

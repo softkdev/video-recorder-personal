@@ -8,8 +8,7 @@ const cb = (err, strout, stdin) => {
     console.log(err);
     return;
   } else {
-    console.log({ strout });
-    console.log({ stdin });
+    console.log(strout);
   }
 };
 

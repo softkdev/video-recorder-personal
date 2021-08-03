@@ -25,7 +25,7 @@ const FaceDetect = ({ video }) => {
         <div className="videp-recorder mt-30 border-22 width-100">
           <VideoRecorder
             className="border-22"
-            onStartRecording={() => setStart(true)}
+            // onStartRecording={() => setStart(true)}
             timeLimit={10000}
             onRecordingComplete={(videoBlob) => {
               setStart(false);

@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import VideoRecorder from "react-video-recorder-persion-customize/lib";
-import AppCanvas from "./components/AppCanvas.jsx";
+// import AppCanvas from "./components/AppCanvas.jsx";
 const FaceDetect = ({ video }) => {
   const [start, setStart] = useState(false);
 
   // video("");
-  useEffect(() => {
-    // console.log(video);
-    if (start) {
-      document.getElementById(
-        "textInfo"
-      ).innerHTML = `<span className="text-danger">صورت شما شناسایی نشد!</span>`;
-    }
-  }, [start]);
+  // useEffect(() => {
+  //   // console.log(video);
+  //   if (start) {
+  //     document.getElementById(
+  //       "textInfo"
+  //     ).innerHTML = `<span className="text-danger">صورت شما شناسایی نشد!</span>`;
+  //   }
+  // }, [start]);
   return (
     <div className="facedetect">
-      {start && (
+      {/* {start && (
         <p className="text-center font-14 mt-40 mb-3" id="textInfo">
           <span className="text-danger">صورت شما شناسایی نشد!</span>
         </p>
-      )}
+      )} */}
       <div className="video-face">
-        {start && <AppCanvas />}
+        {/* {start && <AppCanvas />} */}
         <div className="videp-recorder mt-30 border-22 width-100">
           <VideoRecorder
             className="border-22"

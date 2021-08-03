@@ -7,9 +7,11 @@ const cb = (err, strout, stdin) => {
   if (err) {
     console.log(err);
     return;
+  } else {
+    console.log({ strout });
+    console.log({ stdin });
   }
 };
 
-console.log({ str });
 exec("git add .", cb);
 exec(`git commit -m "${str}"`, cb);

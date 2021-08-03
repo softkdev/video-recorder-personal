@@ -6,6 +6,8 @@ import url from "rollup-plugin-url";
 import {
   imgResolverPlugin,
   cssResolverPlugin,
+  svgResolverPlugin,
+  mediaResolverPlugin,
 } from "./rollup-plugin-images.js";
 
 import pkg from "./package.json";
@@ -27,6 +29,8 @@ export default {
   plugins: [
     imgResolverPlugin(),
     cssResolverPlugin(),
+    svgResolverPlugin(),
+    mediaResolverPlugin(),
     external(),
     url({ exclude: ["**/*.svg"] }),
     babel({

@@ -14,3 +14,5 @@ const cb = (err, strout, stdin) => {
 
 exec("git add .", cb);
 exec(`git commit -m "${str}"`, cb);
+exec(`npm version patch -m "${str}"`, cb);
+exec("npm publish", cb);

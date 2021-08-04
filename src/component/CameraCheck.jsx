@@ -5,25 +5,25 @@ export const CameraCheck = ({ customMessage } = "") => {
   let stateType = false;
   const MessageAlert = (message) => {
     return (
-      <div class="body-modal">
-        <h5 class="title-modal text-center">خطا در دسترسی دوربین </h5>
+      <div className="body-modal">
+        <h5 className="title-modal text-center">خطا در دسترسی دوربین </h5>
         <hr />
-        <p class="description-modal">
+        <p className="description-modal">
           جهت احراز هویت رعایت کردن موارد زیر
-          <span class="text-error-color">الزامیست</span>
+          <span className="text-error-color">الزامیست</span>
         </p>
-        <ul class="modal-list">
-          <li class="li-modal text-danger">{message}</li>
+        <ul className="modal-list">
+          <li className="li-modal text-danger">{message}</li>
           <br />
-          <div class="text-bottom">
-            <li class="li-modal">دسترسی دوربین را چک کنید</li>
-            <li class="li-modal">
+          <div className="text-bottom">
+            <li className="li-modal">دسترسی دوربین را چک کنید</li>
+            <li className="li-modal">
               در صورت هرگونه مشکل در فرایند احراز با پشتیبانی تماس بگیرید
               91002190-021
             </li>
           </div>
         </ul>
-        <p class="custom-message">{customMessage || ""}</p>
+        <p className="custom-message">{customMessage || ""}</p>
       </div>
     );
   };

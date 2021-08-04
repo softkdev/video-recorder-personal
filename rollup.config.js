@@ -1,4 +1,5 @@
 import babel from "rollup-plugin-babel";
+import json from "@rollup/plugin-json";
 import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
@@ -31,6 +32,9 @@ export default {
     cssResolverPlugin(),
     svgResolverPlugin(),
     mediaResolverPlugin(),
+    json({
+      compact: true,
+    }),
     external(),
     url({ exclude: ["**/*.svg"] }),
     babel({

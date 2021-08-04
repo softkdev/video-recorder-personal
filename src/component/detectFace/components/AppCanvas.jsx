@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Canvas, useFrame, useThree, useUpdate } from "react-three-fiber";
+import "./customStyle.css";
 // import main script and neural network model from Jeeliz FaceFilter NPM package
 import { JEELIZFACEFILTER, NN_4EXPR } from "facefilter";
 import JEELIZFACEFILTERGEN from "facefilter/dist/jeelizFaceFilter.module.js";
@@ -7,8 +8,8 @@ import { JeelizCanvas2DHelper } from "./JeelizCanvas2DHelper.jsx";
 // import THREE.js helper, useful to compute pose
 // The helper is not minified, feel free to customize it (and submit pull requests bro):
 import { JeelizThreeFiberHelper } from "../contrib/faceFilter/JeelizThreeFiberHelper.jsx";
-import person from "./../../../assets/media/new.png";
-import bibSound from "./../../../assets/media/bib.mp3";
+import person from "./../../../../assets/images/new.png";
+import bibSound from "./../../../../assets/video/bib.mp3";
 
 const _maxFacesDetected = 1; // max number of detected faces
 const _faceFollowers = new Array(_maxFacesDetected);

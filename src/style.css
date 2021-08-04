@@ -172,26 +172,17 @@
     border-radius: 8px;
   }
   
-  .videp-recorder {
-    position: absolute;
-    top: 0;
-  }
-  
   .video-parent {
     position: relative;
   }
-  
-  video[class|=video-recorder__Video-sc] {
-    display: none;
-  }
-  
-  .videp-recorder div[class|=record-button__Instructions-sc] {
+
+  .video-recorder div[class|=record-button__Instructions-sc] {
     color: #000 !important;
     font-family: Dana !important;
     letter-spacing: normal !important;
   }
   
-  .videp-recorder>div {
+  .video-recorder>div {
     background-color: transparent !important;
   }
   

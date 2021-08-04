@@ -5,7 +5,8 @@ import { osName } from "react-device-detect";
 // import videoHelp from "./../../assets/video/video.mp4";
 import { CustomDialog, useDialog } from "react-st-modal";
 // import reload from "./../../assets/images/reload.svg";
-export const RecordVideo = ({ setVideo, videoHelp, reload }) => {
+export const RecordVideo = ({ setVideo, videoHelp, reload, time }) => {
+  let timeOut = time || 10000;
   useEffect(() => {
     if (osName === "iOS") {
       CustomDialog(<CustomDialogContentVideo />, {
@@ -109,10 +110,9 @@ export const RecordVideo = ({ setVideo, videoHelp, reload }) => {
       </div>
     );
   };
-  // return osName !== "iOS" ? (
-  //   <RecordView setVideo={setVideo} time={10000} />
-  // ) : (
-  //   <FaceDetect video={setVideo} />
-  // );
-  return <FaceDetect video={setVideo} />;
+  return osName !== "iOS" ? (
+    <RecordView setVideo={setVideo} time={timeOut} />
+  ) : (
+    <FaceDetect video={setVideo} time={timeOut} />
+  );
 };

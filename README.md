@@ -12,15 +12,46 @@ npm install --save video-recorder-itsaaz
 
 ## Usage
 
-```jsx
-import React, { Component } from "react";
+for check the camera
 
-import { useMyHook } from "video-recorder-itsaaz";
+```jsx
+import React, { useEffect } from "react";
+
+import { CameraCheck } from "video-recorder-itsaaz";
 
 const Example = () => {
-  const example = useMyHook();
+  useEffect(() => {
+    CameraCheck();
+  }, []);
   return <div>{example}</div>;
 };
+```
+
+for video recorder
+
+```jsx
+import React,  from "react";
+
+import { RecordVideo } from "video-recorder-itsaaz";
+
+const Example = () => {
+
+  return (
+    <div>
+      <RecordVideo
+        setVideo={setvideo}
+        videoHelp={videoHelp}
+        reload={reload}
+      />
+    </div>
+  );
+};
+```
+
+For the style this package
+
+```jsx
+import "video-recorder-itsaaz/src/style.css";
 ```
 
 ## License

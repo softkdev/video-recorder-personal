@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import VideoRecorder from "react-video-recorder";
 // import AppCanvas from "./components/AppCanvas.jsx";
 const FaceDetect = ({ video }) => {
-  const [start, setStart] = useState(false);
+  // const [start, setStart] = useState(false);
 
   // video("");
   // useEffect(() => {
@@ -22,19 +22,7 @@ const FaceDetect = ({ video }) => {
       )} */}
       <div className="video-face">
         {/* {start && <AppCanvas />} */}
-        <div className="videp-recorder mt-30 border-22 width-100">
-          {/* <VideoRecorder
-            className="border-22"
-            // onStartRecording={() => setStart(true)}
-            timeLimit={10000}
-            onRecordingComplete={(videoBlob) => {
-              setStart(false);
-              const file = new File([videoBlob], "video.mp4", {
-                type: "mp4",
-              });
-              video(file);
-            }}
-          /> */}
+        <div className="video-recorder">
           <VideoRecorder
             renderLoadingView={() => {
               return <div style={{ color: "black" }}>لطفا صبر نمایید ...</div>;
@@ -66,7 +54,7 @@ const FaceDetect = ({ video }) => {
                 </div>
               );
             }}
-            className="border-22"
+            className="video-face"
             timeLimit={10000}
             onRecordingComplete={(videoBlob) => {
               const file = new File([videoBlob], "video.mp4", {

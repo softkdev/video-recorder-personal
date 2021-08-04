@@ -1,6 +1,7 @@
 import React from "react";
 import { isMacOs, osName } from "react-device-detect";
 import { CustomDialog } from "react-st-modal";
+import "./../style.css";
 export const CameraCheck = ({ customMessage } = "") => {
   let stateType = false;
   const MessageAlert = (message) => {

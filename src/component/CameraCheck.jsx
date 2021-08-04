@@ -1,7 +1,7 @@
 import React from "react";
 import { isMacOs, osName } from "react-device-detect";
 import { CustomDialog } from "react-st-modal";
-export const CameraCheck = ({ customMessage } = "") => {
+export const CameraCheck = ({ customMessage, className } = "") => {
   let stateType = false;
   const MessageAlert = (message) => {
     return (
@@ -33,7 +33,7 @@ export const CameraCheck = ({ customMessage } = "") => {
     CustomDialog(MessageAlert(message), {
       showCloseIcon: true,
       isCanClose: true,
-      class: "modal-video",
+      class: `modal-video ${className || ""}`,
     });
   };
 

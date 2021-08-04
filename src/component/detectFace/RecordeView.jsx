@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import CountdownTimer from "react-component-countdown-timer";
 
-export const RecordView = ({ setVideo, time }) => {
+export const RecordView = ({ setVideo, time, className }) => {
   let recordingTimeMS = time || 5000;
 
   const [preview, setPreview] = useState("");
@@ -62,7 +62,7 @@ export const RecordView = ({ setVideo, time }) => {
   };
 
   return (
-    <div>
+    <div className={className || ""}>
       <div className="left">
         <Webcam
           id="videoWebCam"

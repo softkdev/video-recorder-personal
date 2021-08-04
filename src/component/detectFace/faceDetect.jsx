@@ -14,7 +14,7 @@ const FaceDetect = ({ video }) => {
   //   }
   // }, [start]);
   return (
-    <div className="facedetect">
+    <div className={`facedetect ${className || ""} `}>
       {/* {start && (
         <p className="text-center font-14 mt-40 mb-3" id="textInfo">
           <span className="text-danger">صورت شما شناسایی نشد!</span>

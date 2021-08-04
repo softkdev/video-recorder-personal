@@ -1,7 +1,7 @@
 import React from "react";
 import VideoRecorder from "react-video-recorder";
 // import AppCanvas from "./components/AppCanvas.jsx";
-const FaceDetect = ({ video }) => {
+const FaceDetect = ({ video, className }) => {
   // const [start, setStart] = useState(false);
 
   // video("");

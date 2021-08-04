@@ -35,7 +35,7 @@ const FaceDetect = ({ video }) => {
               video(file);
             }}
           /> */}
-          {/* <VideoRecorder
+          <VideoRecorder
             renderLoadingView={() => {
               return <div style={{ color: "black" }}>لطفا صبر نمایید ...</div>;
             }}
@@ -74,7 +74,7 @@ const FaceDetect = ({ video }) => {
               });
               video(file);
             }}
-          /> */}
+          />
         </div>
       </div>
     </div>

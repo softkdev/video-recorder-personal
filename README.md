@@ -60,4 +60,4 @@ MIT © [Kavand-1400](https://github.com/Kavand-1400)
 
 ---
 
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
+This hook is package using [create-react-hook](https://github.com/hermanya/create-react-hook).

@@ -1,3 +1,8 @@
 video[class|=video-recorder__Video-sc] {
     display: none;
   }
+  .video-recorder {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }

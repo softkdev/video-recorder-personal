@@ -189,3 +189,7 @@
   span.SVGInline {
     display: none;
   }
+  
+  div[class|=.switch-camera-] {
+    display: none;
+  }

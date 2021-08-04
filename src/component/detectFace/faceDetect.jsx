@@ -6,7 +6,7 @@ const FaceDetect = ({ video }) => {
 
   // video("");
   // useEffect(() => {
-  //   // console.log(video);
+  // console.log(video);
   //   if (start) {
   //     document.getElementById(
   //       "textInfo"

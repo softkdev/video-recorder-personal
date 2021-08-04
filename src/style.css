@@ -190,6 +190,6 @@
     display: none;
   }
   
-  [class|=switch-camera-view] {
+  div[class^=switch-camera] {
     display: none;
   }

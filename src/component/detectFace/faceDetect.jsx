@@ -1,7 +1,7 @@
 import React from "react";
 import VideoRecorder from "react-video-recorder";
 // import AppCanvas from "./components/AppCanvas.jsx";
-const FaceDetect = ({ video, className }) => {
+const FaceDetect = ({ video, className, time }) => {
   // const [start, setStart] = useState(false);
 
   // video("");
@@ -55,7 +55,7 @@ const FaceDetect = ({ video, className }) => {
               );
             }}
             className="video-face"
-            timeLimit={10000}
+            timeLimit={time}
             onRecordingComplete={(videoBlob) => {
               const file = new File([videoBlob], "video.mp4", {
                 type: "mp4",

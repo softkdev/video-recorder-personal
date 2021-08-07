@@ -4,7 +4,7 @@
   "description": "This is a package usefull for recording webcam in every devices",
   "author": "Hossein Kavand",
   "license": "MIT",
-  "repository": "Kavand-1400/test-hook-custom",
+  "repository": "Kavand-1400/video-recorder-itsaaz",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

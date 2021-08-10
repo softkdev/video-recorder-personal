@@ -89,18 +89,18 @@ export const Recorder = ({
   return (
     <>
       {/* {osName !== "iOS" ? ( */}
-      <>
+      <div className="w-100">
         <Webcam
           id="videoWebCam"
           mirrored={true}
           audio={false}
-          style={state === 1 ? { display: "block" } : { display: "none" }}
+          // style={state === 1 ? { display: "block" } : { display: "none" }}
           mirrored="true"
           screenshotFormat="image/jpeg"
           className={classes.others.webcam || ""}
         />
         <video
-          style={state === 2 ? { display: "block" } : { display: "none" }}
+          // style={state === 2 ? { display: "block" } : { display: "none" }}
           id="preview"
           autoPlay
           muted
@@ -121,7 +121,7 @@ export const Recorder = ({
         ) : (
           <>{CustomCountDown}</>
         )}
-      </>
+      </div>
       {/* ) : ( */}
       {/* <>
           <VideoRecorder

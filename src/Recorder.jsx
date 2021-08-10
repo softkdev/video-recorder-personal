@@ -39,7 +39,7 @@ export const Recorder = ({
     console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
-  }, []);
+  });
 
   const handleStopVideo = () => {
     setState(2);

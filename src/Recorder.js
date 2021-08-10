@@ -4,28 +4,35 @@ import VideoRecorder from "react-video-recorder";
 import CountdownTimer from "react-component-countdown-timer";
 import { osName } from "react-device-detect";
 
-export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
+export const Recorder = ({
+  setVideo = () => {},
+  time = 10000,
+  classes = {
     others: {
-        webcam: "",
-        button: ""
+      webcam: "",
+      button: "",
     },
     ios: {
-        webcam: "",
-        error: "",
+      webcam: "",
+      error: "",
     },
     count: "",
-    }, CustomCountDown = 
+  },
+  CustomCountDown = (
     <CountdownTimer
-        className={classes.count}
-        count={time / 1000}
-        hideDay
-        hideHours
-        backgroundColor={"inherit"}
-        color={"inherit"}
+      className={classes.count}
+      count={time / 1000}
+      hideDay
+      hideHours
+      backgroundColor={"inherit"}
+      color={"inherit"}
     />
+  ),
 }) => {
-  const [preview, setPreview] = useState("");
-  const [videoWebCam, setVideoWebCam] = useState("");
+  const [preview, setPreview] = useState(document.getElementById("preview"));
+  const [videoWebCam, setVideoWebCam] = useState(
+    document.getElementById("videoWebCam")
+  );
   const [state, setState] = useState(1);
   const [showButton, setShowButton] = useState(true);
   const [showButtonReset, setShowButtonReset] = useState(false);
@@ -33,7 +40,7 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
   useEffect(() => {
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
-  },[]);
+  }, []);
 
   const handleStopVideo = () => {
     setState(2);
@@ -61,14 +68,6 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
     mediaRecorder.onvideodataavailable = function (e) {
       chunks.push(e.data);
     };
-    // mediaRecorder.onstop = function (e) {
-    //   var blob = new Blob(chunks, { type: "video/mp4" });
-    //   chunks = [];
-    //   var videoURL = URL.createObjectURL(blob);
-    //   preview.src = videoURL;
-    //   // setPreview({...preview, src: blob})
-    //   setVideo(blob);
-    // };
     mediaRecorder.onstop = function (e) {
       var blob = new Blob(chunks, { type: "video/mp4" });
       chunks = [];
@@ -84,24 +83,24 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
   };
 
   let iosMessage = (message) => {
-    return <div className={classes.ios.error}>{message}</div>
-  } 
+    return <div className={classes.ios.error}>{message}</div>;
+  };
 
   return (
     <>
-      { osName !== "iOS" ? 
+      {osName !== "iOS" ? (
         <>
           <Webcam
             id="videoWebCam"
             mirrored={true}
             audio={false}
-            style={state === 1 ? {display: "block"} : {display: "none"}}
+            style={state === 1 ? { display: "block" } : { display: "none" }}
             mirrored="true"
             screenshotFormat="image/jpeg"
             className={classes.others.webcam || ""}
           />
           <video
-            style={state === 2 ? {display: "block"} : {display: "none"}}
+            style={state === 2 ? { display: "block" } : { display: "none" }}
             id="preview"
             autoPlay
             muted
@@ -109,16 +108,24 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
             className={classes.others.webcam || ""}
           ></video>
           {showButton ? (
-            <button onClick={handleStart} className={classes.others.button || ""}>
+            <button
+              onClick={handleStart}
+              className={classes.others.button || ""}
+            >
               ضبط ویدیو
             </button>
           ) : showButtonReset ? (
-            <button onClick={handleResetVideo} className={classes.others.button || ""}>
+            <button
+              onClick={handleResetVideo}
+              className={classes.others.button || ""}
+            >
               ضبط دوباره فیلم
             </button>
-          ) : <>{CustomCountDown}</>}
+          ) : (
+            <>{CustomCountDown}</>
+          )}
         </>
-        :
+      ) : (
         <>
           <VideoRecorder
             renderLoadingView={() => {
@@ -135,7 +142,7 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
                 return iosMessage("یک بار دیگر ضبط کنید");
               }
               if (e === "REC") {
-                return iosMessage("ضبط نمایید")
+                return iosMessage("ضبط نمایید");
               }
             }}
             renderErrorView={() => {
@@ -151,7 +158,7 @@ export const Recorder = ({ setVideo=()=>{}, time = 10000, classes={
             }}
           />
         </>
-      }
+      )}
     </>
   );
 };

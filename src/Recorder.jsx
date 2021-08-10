@@ -62,7 +62,7 @@ export const Recorder = ({ setVideo, time }) => {
     }
     let mediaRecorder = new MediaRecorder(videoStream);
     let chunks = [];
-    mediaRecorder.onvideodataavailable = function (e) {
+    mediaRecorder.ondataavailable = function (e) {
       chunks.push(e.data);
     };
     mediaRecorder.onstop = function (e) {

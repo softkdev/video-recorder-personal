@@ -72,6 +72,7 @@ export const Recorder = ({
       var blob = new Blob(chunks, { type: "video/mp4" });
       chunks = [];
       var videoURL = URL.createObjectURL(blob);
+      console.log(preview);
       preview.src = videoURL;
       setVideo(blob);
     };

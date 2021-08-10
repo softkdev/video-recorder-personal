@@ -38,6 +38,7 @@ export const Recorder = ({
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
+    console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
   }, []);
@@ -78,8 +79,8 @@ export const Recorder = ({
     };
     mediaRecorder.start();
     setTimeout(() => {
-      handleStopVideo();
       mediaRecorder.stop();
+      handleStopVideo();
     }, [time]);
   };
 
@@ -90,41 +91,41 @@ export const Recorder = ({
   return (
     <>
       {/* {osName !== "iOS" ? ( */}
-      <div className="w-100">
+      <div className="left">
         <Webcam
           id="videoWebCam"
           mirrored={true}
           audio={false}
-          // style={state === 1 ? { display: "block" } : { display: "none" }}
+          style={state === 1 ? { display: "block" } : { display: "none" }}
           mirrored="true"
           screenshotFormat="image/jpeg"
           className={classes.others.webcam || ""}
         />
         <video
-          // style={state === 2 ? { display: "block" } : { display: "none" }}
+          style={state === 2 ? { display: "block" } : { display: "none" }}
           id="preview"
           autoPlay
           muted
           loop
           className={classes.others.webcam || ""}
         ></video>
-        {showButton ? (
+        {showButton && (
           <button onClick={handleStart} className={classes.others.button || ""}>
             ضبط ویدیو
           </button>
-        ) : showButtonReset ? (
+        )}
+        {showButtonReset && (
           <button
             onClick={handleResetVideo}
             className={classes.others.button || ""}
           >
             ضبط دوباره فیلم
           </button>
-        ) : (
-          <>{CustomCountDown}</>
         )}
+        {!showButton && !showButtonReset && <>{CustomCountDown}</>}
       </div>
-      {/* ) : ( */}
-      {/* <>
+      {/* ) : ( 
+         <>
           <VideoRecorder
             renderLoadingView={() => {
               return iosMessage("لطفا صبر نمایید ...");

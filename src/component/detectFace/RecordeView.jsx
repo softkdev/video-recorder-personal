@@ -12,10 +12,10 @@ export const RecordView = ({ setVideo, time, className }) => {
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
-    console.log("heare me recorder");
+    // console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
-  }, []);
+  });
 
   const handleStopVideo = () => {
     setState(2);

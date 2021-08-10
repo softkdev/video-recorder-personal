@@ -120,7 +120,6 @@ export const RecordVideo = ({
   return osName !== "iOS" ? (
     <>
       <RecordView className={className} setVideo={setVideo} time={timeOut} />
-      <Recorder setVideo={setVideo} time={timeOut} />
     </>
   ) : (
     <FaceDetect className={className} video={setVideo} time={timeOut} />

@@ -88,45 +88,42 @@ export const Recorder = ({
 
   return (
     <>
-      {osName !== "iOS" ? (
-        <>
-          <Webcam
-            id="videoWebCam"
-            mirrored={true}
-            audio={false}
-            style={state === 1 ? { display: "block" } : { display: "none" }}
-            mirrored="true"
-            screenshotFormat="image/jpeg"
-            className={classes.others.webcam || ""}
-          />
-          <video
-            style={state === 2 ? { display: "block" } : { display: "none" }}
-            id="preview"
-            autoPlay
-            muted
-            loop
-            className={classes.others.webcam || ""}
-          ></video>
-          {showButton ? (
-            <button
-              onClick={handleStart}
-              className={classes.others.button || ""}
-            >
-              ضبط ویدیو
-            </button>
-          ) : showButtonReset ? (
-            <button
-              onClick={handleResetVideo}
-              className={classes.others.button || ""}
-            >
-              ضبط دوباره فیلم
-            </button>
-          ) : (
-            <>{CustomCountDown}</>
-          )}
-        </>
-      ) : (
-        <>
+      {/* {osName !== "iOS" ? ( */}
+      <>
+        <Webcam
+          id="videoWebCam"
+          mirrored={true}
+          audio={false}
+          style={state === 1 ? { display: "block" } : { display: "none" }}
+          mirrored="true"
+          screenshotFormat="image/jpeg"
+          className={classes.others.webcam || ""}
+        />
+        <video
+          style={state === 2 ? { display: "block" } : { display: "none" }}
+          id="preview"
+          autoPlay
+          muted
+          loop
+          className={classes.others.webcam || ""}
+        ></video>
+        {showButton ? (
+          <button onClick={handleStart} className={classes.others.button || ""}>
+            ضبط ویدیو
+          </button>
+        ) : showButtonReset ? (
+          <button
+            onClick={handleResetVideo}
+            className={classes.others.button || ""}
+          >
+            ضبط دوباره فیلم
+          </button>
+        ) : (
+          <>{CustomCountDown}</>
+        )}
+      </>
+      {/* ) : ( */}
+      {/* <>
           <VideoRecorder
             renderLoadingView={() => {
               return iosMessage("لطفا صبر نمایید ...");
@@ -158,7 +155,7 @@ export const Recorder = ({
             }}
           />
         </>
-      )}
+      )} */}
     </>
   );
 };

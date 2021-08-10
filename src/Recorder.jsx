@@ -5,7 +5,7 @@ import CountdownTimer from "react-component-countdown-timer";
 import { osName } from "react-device-detect";
 
 export const Recorder = ({
-  setVideo = () => {},
+  setVideo,
   time = 10000,
   classes = {
     others: {

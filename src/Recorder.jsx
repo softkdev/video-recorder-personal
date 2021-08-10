@@ -36,6 +36,7 @@ export const Recorder = ({
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
+    console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
   }, []);

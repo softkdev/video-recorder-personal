@@ -29,16 +29,16 @@ export const Recorder = ({
   //   />
   // ),
 }) => {
-  const [preview, setPreview] = useState("");
-  const [videoWebCam, setVideoWebCam] = useState("");
+  const [previewtow, setPreviewtow] = useState("");
+  const [videoWebCamTow, setVideoWebCamTow] = useState("");
   const [state, setState] = useState(1);
   const [showButton, setShowButton] = useState(true);
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
     console.log("heare");
-    setPreview(document.getElementById("preview"));
-    setVideoWebCam(document.getElementById("videoWebCam"));
+    setPreviewtow(document.getElementById("previewtow"));
+    setVideoWebCamTow(document.getElementById("videoWebCamTow"));
   });
 
   const handleStopVideo = () => {
@@ -58,9 +58,9 @@ export const Recorder = ({
     const sUsrAg = navigator.userAgent;
     let videoStream;
     if (sUsrAg.indexOf("Firefox") > -1) {
-      videoStream = videoWebCam.mozCaptureStream();
+      videoStream = videoWebCamTow.mozCaptureStream();
     } else {
-      videoStream = videoWebCam.captureStream();
+      videoStream = videoWebCamTow.captureStream();
     }
     let mediaRecorder = new MediaRecorder(videoStream);
     let chunks = [];
@@ -73,7 +73,7 @@ export const Recorder = ({
       var videoURL = URL.createObjectURL(blob);
       console.log({ blob });
       console.log({ videoURL });
-      preview.src = videoURL;
+      previewtow.src = videoURL;
       setVideo(blob);
     };
     mediaRecorder.start();
@@ -92,7 +92,7 @@ export const Recorder = ({
       {/* {osName !== "iOS" ? ( */}
       <div className="left">
         <Webcam
-          id="videoWebCam"
+          id="videoWebCamTow"
           mirrored={true}
           audio={false}
           style={state === 1 ? { display: "block" } : { display: "none" }}
@@ -102,7 +102,7 @@ export const Recorder = ({
         />
         <video
           style={state === 2 ? { display: "block" } : { display: "none" }}
-          id="preview"
+          id="previewtow"
           autoPlay
           muted
           loop

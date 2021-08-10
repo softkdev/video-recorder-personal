@@ -4,9 +4,8 @@ import Webcam from "react-webcam";
 import CountdownTimer from "react-component-countdown-timer";
 // import { osName } from "react-device-detect";
 
-export const Recorder = ({
-  setVideo,
-  time = 10000,
+export const Recorder = ({ setVideo, time }) => {
+  const timing = time || 10000;
   // classes = {
   //   others: {
   //     webcam: "videoFilm",
@@ -28,7 +27,6 @@ export const Recorder = ({
   //     color={"inherit"}
   //   />
   // ),
-}) => {
   const [previewtow, setPreviewtow] = useState("");
   const [videoWebCamTow, setVideoWebCamTow] = useState("");
   const [state, setState] = useState(1);
@@ -36,10 +34,10 @@ export const Recorder = ({
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
-    console.log("heare");
+    console.log("heare Recorder");
     setPreviewtow(document.getElementById("previewtow"));
     setVideoWebCamTow(document.getElementById("videoWebCamTow"));
-  });
+  }, []);
 
   const handleStopVideo = () => {
     setState(2);
@@ -80,16 +78,18 @@ export const Recorder = ({
     setTimeout(() => {
       handleStopVideo();
       mediaRecorder.stop();
-    }, [time]);
+    }, [timing]);
   };
 
   // let iosMessage = (message) => {
   //   return <div className={classes.ios.error}>{message}</div>;
   // };
 
+  {
+    /* {osName !== "iOS" ? ( */
+  }
   return (
     <div>
-      {/* {osName !== "iOS" ? ( */}
       <div className="left">
         <Webcam
           id="videoWebCamTow"
@@ -124,7 +124,7 @@ export const Recorder = ({
         {!showButton && !showButtonReset && (
           <CountdownTimer
             // className={classes.count}
-            count={time / 1000}
+            count={timing / 1000}
             hideDay
             hideHours
             backgroundColor={"inherit"}
@@ -132,7 +132,10 @@ export const Recorder = ({
           />
         )}
       </div>
-      {/* ) : ( 
+    </div>
+  );
+};
+/* ) : ( 
          <>
           <VideoRecorder
             renderLoadingView={() => {
@@ -165,7 +168,4 @@ export const Recorder = ({
             }}
           />
         </>
-      )} */}
-    </div>
-  );
-};
+      )} */

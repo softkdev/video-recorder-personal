@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
-import VideoRecorder from "react-video-recorder";
+// import VideoRecorder from "react-video-recorder";
 import CountdownTimer from "react-component-countdown-timer";
-import { osName } from "react-device-detect";
+// import { osName } from "react-device-detect";
 
 export const Recorder = ({
   setVideo,
@@ -78,8 +78,8 @@ export const Recorder = ({
     };
     mediaRecorder.start();
     setTimeout(() => {
-      mediaRecorder.stop();
       handleStopVideo();
+      mediaRecorder.stop();
     }, [time]);
   };
 

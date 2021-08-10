@@ -15,7 +15,7 @@ export const RecordView = ({ setVideo, time, className }) => {
     // console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
-  });
+  }, []);
 
   const handleStopVideo = () => {
     setState(2);

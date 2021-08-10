@@ -7,27 +7,27 @@ import { osName } from "react-device-detect";
 export const Recorder = ({
   setVideo,
   time = 10000,
-  classes = {
-    others: {
-      webcam: "videoFilm",
-      button: "",
-    },
-    ios: {
-      webcam: "",
-      error: "",
-    },
-    count: "",
-  },
-  CustomCountDown = (
-    <CountdownTimer
-      className={classes.count}
-      count={time / 1000}
-      hideDay
-      hideHours
-      backgroundColor={"inherit"}
-      color={"inherit"}
-    />
-  ),
+  // classes = {
+  //   others: {
+  //     webcam: "videoFilm",
+  //     button: "",
+  //   },
+  //   ios: {
+  //     webcam: "",
+  //     error: "",
+  //   },
+  //   count: "",
+  // },
+  // CustomCountDown = (
+  //   <CountdownTimer
+  //     className={classes.count}
+  //     count={time / 1000}
+  //     hideDay
+  //     hideHours
+  //     backgroundColor={"inherit"}
+  //     color={"inherit"}
+  //   />
+  // ),
 }) => {
   const [preview, setPreview] = useState("");
   const [videoWebCam, setVideoWebCam] = useState("");
@@ -83,9 +83,9 @@ export const Recorder = ({
     }, [time]);
   };
 
-  let iosMessage = (message) => {
-    return <div className={classes.ios.error}>{message}</div>;
-  };
+  // let iosMessage = (message) => {
+  //   return <div className={classes.ios.error}>{message}</div>;
+  // };
 
   return (
     <div>
@@ -98,7 +98,7 @@ export const Recorder = ({
           style={state === 1 ? { display: "block" } : { display: "none" }}
           mirrored="true"
           screenshotFormat="image/jpeg"
-          className={classes.others.webcam || ""}
+          // className={classes.others.webcam || ""}
         />
         <video
           style={state === 2 ? { display: "block" } : { display: "none" }}
@@ -106,22 +106,31 @@ export const Recorder = ({
           autoPlay
           muted
           loop
-          className={classes.others.webcam || ""}
+          // className={classes.others.webcam || ""}
         ></video>
         {showButton && (
-          <button onClick={handleStart} className={classes.others.button || ""}>
+          <button onClick={handleStart} className={""}>
             ضبط ویدیو
           </button>
         )}
         {showButtonReset && (
           <button
             onClick={handleResetVideo}
-            className={classes.others.button || ""}
+            // className={classes.others.button || ""}
           >
             ضبط دوباره فیلم
           </button>
         )}
-        {!showButton && !showButtonReset && <>{CustomCountDown}</>}
+        {!showButton && !showButtonReset && (
+          <CountdownTimer
+            // className={classes.count}
+            count={time / 1000}
+            hideDay
+            hideHours
+            backgroundColor={"inherit"}
+            color={"inherit"}
+          />
+        )}
       </div>
       {/* ) : ( 
          <>

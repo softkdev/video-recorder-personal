@@ -9,7 +9,7 @@ export const Recorder = ({
   time = 10000,
   classes = {
     others: {
-      webcam: "",
+      webcam: "videoFilm",
       button: "",
     },
     ios: {
@@ -29,16 +29,13 @@ export const Recorder = ({
     />
   ),
 }) => {
-  const [preview, setPreview] = useState(document.getElementById("preview"));
-  const [videoWebCam, setVideoWebCam] = useState(
-    document.getElementById("videoWebCam")
-  );
+  const [preview, setPreview] = useState("");
+  const [videoWebCam, setVideoWebCam] = useState("");
   const [state, setState] = useState(1);
   const [showButton, setShowButton] = useState(true);
   const [showButtonReset, setShowButtonReset] = useState(false);
 
   useEffect(() => {
-    console.log("heare");
     setPreview(document.getElementById("preview"));
     setVideoWebCam(document.getElementById("videoWebCam"));
   }, []);
@@ -73,7 +70,8 @@ export const Recorder = ({
       var blob = new Blob(chunks, { type: "video/mp4" });
       chunks = [];
       var videoURL = URL.createObjectURL(blob);
-      console.log(preview);
+      console.log({ blob });
+      console.log({ videoURL });
       preview.src = videoURL;
       setVideo(blob);
     };
@@ -89,7 +87,7 @@ export const Recorder = ({
   };
 
   return (
-    <>
+    <div>
       {/* {osName !== "iOS" ? ( */}
       <div className="left">
         <Webcam
@@ -158,6 +156,6 @@ export const Recorder = ({
           />
         </>
       )} */}
-    </>
+    </div>
   );
 };

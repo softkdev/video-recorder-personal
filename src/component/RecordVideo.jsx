@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import FaceDetect from "./detectFace/faceDetect.jsx";
 import { RecordView } from "./detectFace/RecordeView.jsx";
 import { osName } from "react-device-detect";
-// import videoHelp from "./../../assets/video/video.mp4";
+import videoHelp from "./../../assets/video/video.mp4";
 import { CustomDialog, useDialog } from "react-st-modal";
 import { Recorder } from "../Recorder.jsx";
-// import reload from "./../../assets/images/reload.svg";
+import reload from "./../../assets/images/reload.svg";
 export const RecordVideo = ({
   setVideo,
-  videoHelp,
-  reload,
+  // videoHelp,
+  // reload,
   time,
   className,
 }) => {
@@ -44,7 +44,7 @@ export const RecordVideo = ({
       <div className="text-center">
         <div className="d-flex video-file">
           <video
-            src={videoHelp}
+            src={"./" + videoHelp}
             className=""
             id="video"
             autoPlay
@@ -53,7 +53,7 @@ export const RecordVideo = ({
           ></video>
           {showbutton && (
             <button className="video-reload" onClick={load}>
-              <img src={reload} alt="reload" />
+              <img src={"./" + reload} alt="reload" />
             </button>
           )}
         </div>
@@ -118,9 +118,7 @@ export const RecordVideo = ({
     );
   };
   return osName !== "iOS" ? (
-    <>
-      <RecordView className={className} setVideo={setVideo} time={timeOut} />
-    </>
+    <RecordView className={className} setVideo={setVideo} time={timeOut} />
   ) : (
     <FaceDetect className={className} video={setVideo} time={timeOut} />
   );

@@ -44,7 +44,7 @@ export const RecordVideo = ({
       <div className="text-center">
         <div className="d-flex video-file">
           <video
-            src={"./" + videoHelp}
+            src={videoHelp}
             className=""
             id="video"
             autoPlay
@@ -53,7 +53,7 @@ export const RecordVideo = ({
           ></video>
           {showbutton && (
             <button className="video-reload" onClick={load}>
-              <img src={"./" + reload} alt="reload" />
+              <img src={reload} alt="reload" />
             </button>
           )}
         </div>

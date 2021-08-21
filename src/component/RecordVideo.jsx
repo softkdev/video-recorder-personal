@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import FaceDetect from "./detectFace/faceDetect.jsx";
 import { RecordView } from "./detectFace/RecordeView.jsx";
 import { osName } from "react-device-detect";
-// import videoHelp from "./../../assets/video/video.mp4";
+import videoHelp from "./../../assets/video/video.mp4";
 import { CustomDialog, useDialog } from "react-st-modal";
 import { Recorder } from "../Recorder.jsx";
 // import reload from "./../../assets/images/reload.svg";
 export const RecordVideo = ({
   setVideo,
-  videoHelp,
+  // videoHelp,
   reload,
   time,
   className,

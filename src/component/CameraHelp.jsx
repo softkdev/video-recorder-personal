@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import { CustomDialog, useDialog } from "react-st-modal";
 import { isAndroid, isChrome, isFirefox, isIOS } from "react-device-detect";
 export const CameraHelp = (props) => {
-  const { children, btnClass, modalClass, arrowClass, imgClass, btnClose } =
-    props;
+  const {
+    children,
+    btnClass,
+    modalClass,
+    arrowClass,
+    imgClass,
+    btnClose,
+    btnCloseText,
+  } = props;
 
   const [typeBrowser, setTypeBrowser] = useState(0);
 
@@ -56,14 +63,11 @@ export const CameraHelp = (props) => {
     const [imgStep, setImgStep] = useState(0);
 
     const nextImage = () => {
-      // console.log({ imgStep });
-      // console.log("length", source[typeBrowser]);
       if (imgStep + 1 < source[typeBrowser].length) {
         setImgStep(imgStep + 1);
       }
     };
     const previousImage = () => {
-      // console.log({ imgStep });
       if (imgStep > 0) {
         setImgStep(imgStep - 1);
       }
@@ -74,6 +78,7 @@ export const CameraHelp = (props) => {
         <div style={styles.parent}>
           <button
             type="button"
+            title="بعدی"
             className={arrowClass}
             onClick={previousImage}
             style={styles.arrowBtn}
@@ -89,21 +94,20 @@ export const CameraHelp = (props) => {
             className={arrowClass}
             onClick={nextImage}
             style={styles.arrowBtn}
+            title="قبلی"
           >
             {" "}
             &#10097;{" "}
           </button>
         </div>
         <button className={btnClose} onClick={() => dialog.close()}>
-          متوجه شدم
+          {btnCloseText || "تایید"}
         </button>
       </>
     );
   };
 
   const handleHelp = () => {
-    console.log({ typeBrowser });
-
     CustomDialog(<CustomDialogContent />, {
       showCloseIcon: false,
       isCanClose: true,

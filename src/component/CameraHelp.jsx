@@ -56,11 +56,14 @@ export const CameraHelp = (props) => {
     const dialog = useDialog();
 
     const nextImage = () => {
+      console.log({ imgStep });
+      console.log("length", source[typeBrowser]);
       if (imgStep < source[typeBrowser].length) {
         setImgStep(imgStep + 1);
       }
     };
     const previousImage = () => {
+      console.log({ imgStep });
       if (imgStep > 0) {
         setImgStep(imgStep - 1);
       }
@@ -69,29 +72,27 @@ export const CameraHelp = (props) => {
     return (
       <>
         <div style={styles.parent}>
-          <div
+          <button
+            type="button"
             className={arrowClass}
             onClick={previousImage}
             style={styles.arrowBtn}
           >
             {" "}
             &#10097;{" "}
-          </div>
+          </button>
           <div className={imgClass} style={styles.img}>
-            <img
-              loading="lazy"
-              src={source[typeBrowser][imgStep]}
-              alt="عکس راهنما"
-            />
+            <img src={source[typeBrowser][imgStep]} alt="عکس راهنما" />
           </div>
-          <div
+          <button
+            type="button"
             className={arrowClass}
             onClick={nextImage}
             style={styles.arrowBtn}
           >
             {" "}
             &#10096;{" "}
-          </div>
+          </button>
         </div>
         <button className={btnClose} onClick={() => dialog.close()}>
           متوجه شدم
@@ -101,7 +102,7 @@ export const CameraHelp = (props) => {
   };
 
   const handleHelp = () => {
-    console.log(typeBrowser);
+    console.log({ typeBrowser });
 
     CustomDialog(<CustomDialogContent />, {
       showCloseIcon: false,

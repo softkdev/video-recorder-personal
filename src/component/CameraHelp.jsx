@@ -56,14 +56,14 @@ export const CameraHelp = (props) => {
     const [imgStep, setImgStep] = useState(0);
 
     const nextImage = () => {
-      console.log({ imgStep });
-      console.log("length", source[typeBrowser]);
-      if (imgStep < source[typeBrowser].length) {
+      // console.log({ imgStep });
+      // console.log("length", source[typeBrowser]);
+      if (imgStep + 1 < source[typeBrowser].length) {
         setImgStep(imgStep + 1);
       }
     };
     const previousImage = () => {
-      console.log({ imgStep });
+      // console.log({ imgStep });
       if (imgStep > 0) {
         setImgStep(imgStep - 1);
       }
@@ -79,7 +79,7 @@ export const CameraHelp = (props) => {
             style={styles.arrowBtn}
           >
             {" "}
-            &#10097;{" "}
+            &#10096;{" "}
           </button>
           <div className={imgClass} style={styles.img}>
             <img src={source[typeBrowser][imgStep]} alt="عکس راهنما" />
@@ -91,7 +91,7 @@ export const CameraHelp = (props) => {
             style={styles.arrowBtn}
           >
             {" "}
-            &#10096;{" "}
+            &#10097;{" "}
           </button>
         </div>
         <button className={btnClose} onClick={() => dialog.close()}>

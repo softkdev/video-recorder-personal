@@ -25,9 +25,10 @@ export const CameraHelp = (props) => {
     img: {
       flex: 1,
     },
-    btn:{
-      width:"100%"
-    }
+    btn: {
+      width: "100%",
+      textAlign: "center",
+    },
   };
 
   const source = {

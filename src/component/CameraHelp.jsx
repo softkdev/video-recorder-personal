@@ -35,8 +35,8 @@ export const CameraHelp = (props) => {
       "https://dashboard.itsaazdev.ir/media/logos/msy.jpg",
     ],
     4: [
-      "https://minio1.itsaaz.ir/dashboard-office/ServiceIcon-OfficeExternalService-Test3-637630705152089110.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minio%2F20210822%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210822T062919Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=514e6ff3db3bdafbc05dfb49947eb4878dcca80c46d4723edcf9eb59cb7ebac3",
-      "https://minio1.itsaaz.ir/dashboard-office/ServiceIcon-OfficeExternalServiceTestService-637635272320585154.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minio%2F20210822%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210822T062919Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=c0ffdb06f6baf04e67653df203c6ac367ead55be7f00bced56242620b57e735c",
+      "https://dashboard.itsaazdev.ir/media/logos/avarez.jpg",
+      "https://dashboard.itsaazdev.ir/media/logos/simcard.jpg",
     ],
   };
 

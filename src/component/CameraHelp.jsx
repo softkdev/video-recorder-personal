@@ -25,6 +25,9 @@ export const CameraHelp = (props) => {
     img: {
       flex: 1,
     },
+    btn:{
+      width:"100%"
+    }
   };
 
   const source = {
@@ -78,9 +81,9 @@ export const CameraHelp = (props) => {
         <div style={styles.parent}>
           <button
             type="button"
-            title="بعدی"
             className={arrowClass}
             onClick={previousImage}
+            title="قبلی"
             style={styles.arrowBtn}
           >
             {" "}
@@ -91,18 +94,20 @@ export const CameraHelp = (props) => {
           </div>
           <button
             type="button"
+            title="بعدی"
             className={arrowClass}
             onClick={nextImage}
             style={styles.arrowBtn}
-            title="قبلی"
           >
             {" "}
             &#10097;{" "}
           </button>
         </div>
-        <button className={btnClose} onClick={() => dialog.close()}>
-          {btnCloseText || "تایید"}
-        </button>
+        <div style={styles.btn}>
+          <button className={btnClose} onClick={() => dialog.close()}>
+            {btnCloseText || "تایید"}
+          </button>
+        </div>
       </>
     );
   };

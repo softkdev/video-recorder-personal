@@ -6,7 +6,6 @@ export const CameraHelp = (props) => {
     props;
 
   const [typeBrowser, setTypeBrowser] = useState(0);
-  const [imgStep, setImgStep] = useState(0);
 
   const styles = {
     parent: {
@@ -54,6 +53,7 @@ export const CameraHelp = (props) => {
 
   const CustomDialogContent = () => {
     const dialog = useDialog();
+    const [imgStep, setImgStep] = useState(0);
 
     const nextImage = () => {
       console.log({ imgStep });

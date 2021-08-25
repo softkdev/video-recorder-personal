@@ -20,8 +20,11 @@ export const CameraCheck = () => {
         navigator.getUserMedia(
           { audio: true, video: true },
           (stream) => {
-            document.querySelector("video").src =
-              window.URL.createObjectURL(stream);
+            let streamVideo = window.URL.createObjectURL(stream);
+
+            document.querySelector("video") &&
+              (document.querySelector("video").src = streamVideo);
+
             var mediaStreamTrack = stream.getVideoTracks()[0];
 
             if (typeof mediaStreamTrack != "undefined") {

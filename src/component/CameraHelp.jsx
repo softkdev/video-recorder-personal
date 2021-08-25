@@ -33,20 +33,18 @@ export const CameraHelp = (props) => {
 
   const source = {
     1: [
-      "https://dashboard.itsaazdev.ir/media/logos/bourse-Recovered.jpg",
-      "https://dashboard.itsaazdev.ir/media/logos/brokerage.jpg",
+      "https://upload.itsaaz.ir/camera/ios01.png",
+      "https://upload.itsaaz.ir/camera/ios02.png",
+      "https://upload.itsaaz.ir/camera/ios03.png",
     ],
-    2: [
-      "https://dashboard.itsaazdev.ir/media/images/shatel-sim.png",
-      "https://dashboard.itsaazdev.ir/media/logos/vezarat-oloum.jpg",
-    ],
+    2: ["https://upload.itsaaz.ir/camera/android.png"],
     3: [
-      "https://dashboard.itsaazdev.ir/media/logos/moavenat-elmi.jpg",
-      "https://dashboard.itsaazdev.ir/media/logos/msy.jpg",
+      "https://upload.itsaaz.ir/camera/chrome01.jpg",
+      "https://upload.itsaaz.ir/camera/chrome02.jpg",
     ],
     4: [
-      "https://dashboard.itsaazdev.ir/media/logos/avarez.jpg",
-      "https://dashboard.itsaazdev.ir/media/logos/simcard.jpg",
+      "https://upload.itsaaz.ir/camera/firefox01.png",
+      "https://upload.itsaaz.ir/camera/firefox02.png",
     ],
   };
 

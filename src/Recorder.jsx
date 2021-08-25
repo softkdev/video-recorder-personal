@@ -18,6 +18,7 @@ export const Recorder = ({
     },
     count: "",
   },
+  children,
   CustomCountDown = (
     <CountdownTimer
       className={classes.count}
@@ -118,7 +119,7 @@ export const Recorder = ({
               onClick={handleStart}
               className={classes.others.button || ""}
             >
-              ضبط ویدیو
+              {children || "ضبط ویدیو"}
             </button>
           ) : showButtonReset ? (
             <button

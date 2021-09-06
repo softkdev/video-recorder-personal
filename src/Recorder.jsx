@@ -6,7 +6,12 @@ import { osName } from "react-device-detect";
 
 export const Recorder = ({
   setVideo = () => {},
+  onStartRecorder = () => {},
+  onStopRecorder = () => {},
+  onResetRecorder = () => {},
   time = 10000,
+  refStart,
+  refReset,
   classes = {
     others: {
       webcam: "",
@@ -42,11 +47,12 @@ export const Recorder = ({
   }, []);
 
   const handleStopVideo = () => {
+    onStopRecorder && onStopRecorder();
     setState(2);
     setShowButtonReset(true);
   };
-
   const handleResetVideo = () => {
+    onResetRecorder && onResetRecorder();
     setVideo("");
     setShowButton(true);
     setShowButtonReset(false);
@@ -54,6 +60,7 @@ export const Recorder = ({
   };
 
   const handleStart = () => {
+    onStartRecorder && onStartRecorder();
     setShowButton(false);
     const sUsrAg = navigator.userAgent;
     let videoStream;
@@ -67,14 +74,6 @@ export const Recorder = ({
     mediaRecorder.ondataavailable = function (e) {
       chunks.push(e.data);
     };
-    // mediaRecorder.onstop = function (e) {
-    //   var blob = new Blob(chunks, { type: "video/mp4" });
-    //   chunks = [];
-    //   var videoURL = URL.createObjectURL(blob);
-    //   preview.src = videoURL;
-    //   // setPreview({...preview, src: blob})
-    //   setVideo(blob);
-    // };
     mediaRecorder.onstop = function (e) {
       var blob = new Blob(chunks, { type: "video/mp4" });
       chunks = [];
@@ -114,22 +113,21 @@ export const Recorder = ({
             loop
             className={classes.others.webcam || ""}
           ></video>
-          {showButton ? (
-            <button
-              onClick={handleStart}
-              className={classes.others.button || ""}
-            >
-              {children || "ضبط ویدیو"}
-            </button>
-          ) : showButtonReset ? (
-            <button
-              onClick={handleResetVideo}
-              className={classes.others.button || ""}
-            >
-              ضبط دوباره فیلم
-            </button>
-          ) : (
+          {!showButton && !showButtonReset ? (
             <>{CustomCountDown}</>
+          ) : (
+            <>
+              <button
+                onClick={
+                  showButton ? handleStart : showButtonReset && handleResetVideo
+                }
+                className={classes.others.button || ""}
+              >
+                {children || showButton
+                  ? "ضبط ویدیو"
+                  : showButtonReset && "ضبط دوباره فیلم"}
+              </button>
+            </>
           )}
         </>
       ) : (

@@ -123,9 +123,10 @@ export const Recorder = ({
                 }
                 className={classes.others.button || ""}
               >
-                {children || showButton
-                  ? "ضبط ویدیو"
-                  : showButtonReset && "ضبط دوباره فیلم"}
+                {children ||
+                  (showButton
+                    ? "ضبط ویدیو"
+                    : showButtonReset && "ضبط دوباره فیلم")}
               </button>
             </>
           )}

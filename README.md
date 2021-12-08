@@ -1,13 +1,13 @@
-# video-recorder-itsaaz
+# video-recorder-personal
 
 >
 
-[![NPM](https://img.shields.io/npm/v/video-recorder-itsaaz.svg)](https://www.npmjs.com/package/video-recorder-itsaaz) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/video-recorder-personal.svg)](https://www.npmjs.com/package/video-recorder-personal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save video-recorder-itsaaz
+npm install --save video-recorder-personal
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ for check the camera
 ```jsx
 import React, { useEffect } from "react";
 
-import { CameraCheck } from "video-recorder-itsaaz";
+import { CameraCheck } from "video-recorder-personal";
 
 const Example = () => {
   useEffect(() => {
@@ -32,7 +32,7 @@ for video recorder
 ```jsx
 import React,  from "react";
 
-import { RecordVideo } from "video-recorder-itsaaz";
+import { RecordVideo } from "video-recorder-personal";
 
 const Example = () => {
 
@@ -51,12 +51,12 @@ const Example = () => {
 For the style this package
 
 ```jsx
-import "video-recorder-itsaaz/src/style.css";
+import "video-recorder-personal/src/style.css";
 ```
 
 ## License
 
-MIT © [Kavand-1400](https://github.com/Kavand-1400)
+MIT © [kavandhossein](https://github.com/kavandhossein)
 
 ---
 

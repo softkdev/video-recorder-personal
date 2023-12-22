@@ -56,7 +56,7 @@ import "video-recorder-personal/src/style.css";
 
 ## License
 
-MIT © [kavandhossein](https://github.com/kavandhossein)
+MIT © [softkdev](https://github.com/softkdev)
 
 ---
 
